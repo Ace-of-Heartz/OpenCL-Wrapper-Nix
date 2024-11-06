@@ -7,9 +7,14 @@
 #ifndef _WIN32
 #pragma GCC diagnostic ignored "-Wignored-attributes" // ignore compiler warnings for CL/cl.hpp with g++
 #endif // _WIN32
-#include <CL/cl.hpp> // OpenCL 1.0, 1.1, 1.2
+
+#define CL_HPP_TARGET_OPENCL_VERSION 210
+#define CL_HPP_ENABLE_EXCEPTIONS
+
+#include <CL/opencl.hpp> // OpenCL 1.0, 1.1, 1.2
 #include "utilities.hpp"
 using cl::Event;
+
 
 static const string driver_installation_instructions =
 #ifdef _WIN32
